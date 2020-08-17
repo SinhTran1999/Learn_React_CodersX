@@ -10,16 +10,33 @@ class App extends Component {
       {title:'Đi đổ xăng'}
     ]
   }
+  //Cách 1:
+  // render(){
+  //   if(this.todoItem.length > 0){
+  //     return (
+  //       <div className="App">
+  //       {
+  //         this.todoItem.map((item,index)=>
+  //         <TodoItem key={index} item={item} />
+  //         )
+  //       } 
+  //       </div>
+  //     );
+  //   }else{
+  //     return (
+  //       <div className="App">Nothing here.</div>
+  //     )
+  //   }
+  // }
+
+  //Cách 2:
   render(){
-  return (
-    <div className="App">
-    {
-      this.todoItem.map((item,index)=>
-      <TodoItem key={index} item={item} />
-      )
-    } 
-    </div>
-  );
+     return <div className="App">
+       {this.todoItem.length > 0 && this.todoItem.map((item, index) =>(
+         <TodoItem key={index} item={item} />
+       ))}
+       {this.todoItem.length === 0 && 'Nothing here'}
+     </div> 
   }
 }
 
