@@ -5,16 +5,18 @@ class App extends Component {
   constructor(){
     super();
     this.todoItem = [
-      'Mua bim bim',
-      'Đi đá bóng',
-      'Đi đổ xăng'
+      {title : 'Mua bim bim', isComplete:true},
+      {title :'Đi đá bóng', isComplete:true},
+      {title:'Đi đổ xăng'}
     ]
   }
   render(){
   return (
     <div className="App">
     {
-      this.todoItem.map((item,index)=><TodoItem key={index} title={item} />)
+      this.todoItem.map((item,index)=>
+      <TodoItem key={index} item={item} />
+      )
     } 
     </div>
   );
