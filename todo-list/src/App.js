@@ -30,10 +30,13 @@ class App extends Component {
   // }
 
   //Cách 2:
+  onItemCliked(){
+    
+  }
   render(){
      return <div className="App">
        {this.todoItem.length > 0 && this.todoItem.map((item, index) =>(
-         <TodoItem key={index} item={item} />
+         <TodoItem key={index} item={item} onClick= {this.onItemCliked} />
        ))}
        {this.todoItem.length === 0 && 'Nothing here'}
      </div> 
